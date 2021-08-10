@@ -64,7 +64,8 @@ char* ReadClipBoard() {//剪切板读取数据
 
 void dialog() //对话输出中心
 {   
-    FILE* fp0=fopen("dialogname.txt","r");
+    FILE* fp0;
+    fopen_s(&fp0, "dialogname.txt", "r");
     if (fp0 == NULL)
         breakOut(4);
     char windowName[50] = { 0 };
@@ -125,7 +126,7 @@ void main() {
 head:
     system("CLS");
     printf(">>欢迎来到frando-ru的终端>.<\n>>你想做什么呢？\n");
-    scanf("%d", &i);
+    scanf_s("%d", &i);
     switch (i) {
         case 1:
             break;
